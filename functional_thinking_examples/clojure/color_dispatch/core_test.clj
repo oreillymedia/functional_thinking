@@ -1,6 +1,6 @@
-(ns color-dispatch.core-test
+(ns core_test
   (:require [clojure.test :refer :all]
-            [color-dispatch.core :refer :all]))
+            [core :refer :all]))
 
 (deftest pure-colors
   (is (= "Red: 5" (color-string (struct color 5 0 0))))
