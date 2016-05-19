@@ -1,24 +1,14 @@
-// BEGIN scala_firstIndexOfAny
-def firstIndexOfAny(input : String, searchChars : Seq[Char]) : Option[Int] = {
-  def indexedInput = (0 until input.length).zip(input)
-  val result = for (pair <- indexedInput;
-                    char <- searchChars;
-                    if (char == pair._2)) yield (pair._1)
-  if (result.isEmpty) 
-    None 
-  else 
-    Some(result.head)
-}
-// END scala_firstIndexOfAny
+  // BEGIN scala_firstIndexOfAny
+  def firstIndexOfAny(input: String, searchChars: Seq[Char]): Option[Int] =
+    indexOfAny(input, searchChars).headOption
+  // END scala_firstIndexOfAny
 
-// BEGIN scala_indexOfAny
-def indexOfAny(input : String, searchChars : Seq[Char]) : Seq[Int] = {
-  def indexedInput = (0 until input.length).zip(input)
-  for (pair <- indexedInput; 
-       char <- searchChars; 
-       if (char == pair._2)) yield (pair._1)
-}
-// END scala_indexOfAny
+  // BEGIN scala_indexOfAny
+  def indexOfAny(input: String, searchChars: Seq[Char]): Seq[Int] = {
+    val indexedInput = input.zipWithIndex
+    for (pair ← indexedInput; char ← searchChars if char == pair._1) yield pair._2
+  }
+ // END scala_indexOfAny
 
 def indexedInput(input : Seq[Char]) : Seq[Any] = {
   (0 until input.length).zip(input)
