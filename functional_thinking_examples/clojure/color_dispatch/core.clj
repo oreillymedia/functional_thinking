@@ -1,5 +1,5 @@
 
-(ns color-dispatch.core)
+(ns core)
 
 ;BEGIN clj_color
 (defstruct color :red :green :blue)
