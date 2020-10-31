@@ -29,8 +29,8 @@ final class Complex(val real: Int, val imaginary: Int) extends Ordered[Complex] 
     41 * ((41 + real) + imaginary)
 
   def compare(that: Complex) : Int = {
-    def myMagnitude = Math.sqrt(real ^ 2 + imaginary ^ 2)
-    def thatMagnitude = Math.sqrt(that.real ^ 2 + that.imaginary ^ 2)
+    def myMagnitude = Math.sqrt(Math.pow(real, 2) + Math.pow(imaginary, 2))
+    def thatMagnitude = Math.sqrt(Math.pow(that.real, 2) + Math.pow(that.imaginary, 2))
     (myMagnitude - thatMagnitude).round.toInt
   }
 }
