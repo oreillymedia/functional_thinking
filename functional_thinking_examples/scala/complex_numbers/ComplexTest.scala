@@ -17,7 +17,7 @@ class ComplexTest extends FunSuite {
   test("comparison") {
     val f = fixture
     assert(f.a < f.b)
-    assert(new Complex(1, 2) >= new Complex(3, 4))
+    assert(new Complex(1, 2) <= new Complex(3, 4))
     assert(new Complex(1, 1) < new Complex(2,2))
     assert(new Complex(-10, -10) > new Complex(1, 1))
     assert(new Complex(1, 2) >= new Complex(1, 2))
